@@ -35,13 +35,15 @@ namespace Task1
             bool res = false;
             Employee[] emp = new Employee[3];
             len = emp.Length;
-
+            
 
 
             for (int i = 0; i < len; i++)
             {
                 Console.WriteLine("\t\tPlease Enter Informaton of Employee " + (i + 1));
                 Console.WriteLine("Please Enter Emp_ID");
+                
+                res = false;
                 while (res == false)
                 {
                     s = Console.ReadLine();
@@ -89,7 +91,7 @@ namespace Task1
                         Console.WriteLine("Please Enter Correct Emp Gender If male Enter M  other F "); 
                     }
                 }
-                Console.ReadLine();
+                
                 emp[i].setID(id);
                 emp[i].setSecurityLevel(Slevel);
                 emp[i].setSalary(sal);
@@ -122,6 +124,13 @@ namespace Task1
                 Console.WriteLine();
 
             }
+            EmployeeSearch EMPS = new EmployeeSearch(emp);
+           // Console.WriteLine(EMPS.Lenght);
+            Employee tempRes;string st;
+            tempRes=EMPS.searchById(3);
+            st = tempRes.ToString();
+            Console.WriteLine("dddddd"+st);
+            Console.WriteLine();
         }
     }
 }
