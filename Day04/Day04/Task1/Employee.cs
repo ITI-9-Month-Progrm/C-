@@ -9,7 +9,7 @@ namespace Task1
     enum Security_Level:Byte {
         Guest=8,Developer = 4,  Secretary = 2 ,DBA= 1//, security_privileges=15
     }
-    struct Employee
+    struct Employee:IComparable
     {
         int id;
         Security_Level security_level;
@@ -76,6 +76,20 @@ namespace Task1
         {
             set { hire_date = value; }
             get { return hire_date; }
+        }
+        public int CompareTo(object obj)
+        {
+            Employee empRight = (Employee) obj;
+            if (empRight.hire_date.Year == hire_date.Year)
+            {
+                if(empRight.hire_date.Month == hire_date.Month)
+                {
+                    return hire_date.Day.CompareTo(empRight.hire_date.Day);
+                }
+                else { return hire_date.Month.CompareTo(empRight.hire_date.Month); }
+            }
+            else { return hire_date.Year.CompareTo(empRight.hire_date.Year); }
+
         }
             
 

@@ -33,7 +33,7 @@ namespace Task1
             string g, sl, s,date,dateAgain;
             string[] splitDate;
             bool res = false;
-            Employee[] emp = new Employee[1];
+            Employee[] emp = new Employee[3];
             len = emp.Length;
 
 
@@ -74,7 +74,7 @@ namespace Task1
                     m = int.Parse(splitDate[1]);
                     y = int.Parse(splitDate[2]);
 
-                } while ((d<1 || d>31) || (m<1 || m>12) ||((y%4!=0)||(m!=2)||(d!=29)));
+                } while ((d<1 || d>31) || (m<1 || m>12) );
 
                 Console.WriteLine("Please Enter Emp Gender If male Enter M other F");
                 
@@ -89,7 +89,7 @@ namespace Task1
                         Console.WriteLine("Please Enter Correct Emp Gender If male Enter M  other F "); 
                     }
                 }
-
+                Console.ReadLine();
                 emp[i].setID(id);
                 emp[i].setSecurityLevel(Slevel);
                 emp[i].setSalary(sal);
@@ -107,6 +107,18 @@ namespace Task1
                 Console.WriteLine("\t\tThis is Information for Employee" + (i + 1));
                 result = emp[i].ToString();
                 Console.WriteLine(result);
+                Console.WriteLine();
+
+            }
+            Array.Sort(emp);
+            //Console.Clear();
+            Console.WriteLine("\t\tThis is Information for Employees After Sorting");
+            string result2;
+            for (int i = 0; i < len; i++)
+            {
+                Console.WriteLine("\t\tThis is Information for Employee" + (i + 1));
+                result2 = emp[i].ToString();
+                Console.WriteLine(result2);
                 Console.WriteLine();
 
             }
