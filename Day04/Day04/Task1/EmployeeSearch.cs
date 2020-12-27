@@ -50,6 +50,23 @@ namespace Task1
             mid--;
                 return empSearch[mid];
             }
+        public Employee searchByDate(Date dateSearch)
+        {
+            Array.Sort(empSearch);
+            int len, left, right, mid = 0;
+            len = empSearch.Length;
+            left = 0; right = len - 1;
 
+            while (left <= right)
+            {
+                mid = (left + right) / 2;
+                if ((dateSearch.Year== empSearch[mid].Hire_Date.Year) && (dateSearch.Month == empSearch[mid].Hire_Date.Month) &&(dateSearch.Day == empSearch[mid].Hire_Date.Day)) 
+                { mid++; break; }
+                else if ((dateSearch.Year > empSearch[mid].Hire_Date.Year) && (dateSearch.Month > empSearch[mid].Hire_Date.Month) && (dateSearch.Day > empSearch[mid].Hire_Date.Day)) { left = mid + 1; }
+                else { right = mid - 1; }
+            }
+            mid--;
+            return empSearch[mid];
+        }
     }
 }

@@ -114,7 +114,7 @@ namespace Task1
             }
             Array.Sort(emp);
             //Console.Clear();
-            Console.WriteLine("\t\tThis is Information for Employees After Sorting");
+            Console.WriteLine("--------This is Information for Employees After Sorting--------");
             string result2;
             for (int i = 0; i < len; i++)
             {
@@ -125,11 +125,21 @@ namespace Task1
 
             }
             EmployeeSearch EMPS = new EmployeeSearch(emp);
-           // Console.WriteLine(EMPS.Lenght);
-            Employee tempRes;string st;
-            tempRes=EMPS.searchById(3);
-            st = tempRes.ToString();
-            Console.WriteLine("dddddd"+st);
+           
+            Employee tempResId, tempResDate; string st;
+            
+            Date sDate = new Date();
+            
+            sDate.Day = 22;sDate.Month = 8;sDate.Year = 1998;
+            tempResId=EMPS.searchById(3);
+            st = tempResId.ToString();
+            Console.WriteLine("--------Search_Result_By_ID--------");
+            Console.WriteLine(st);
+            Console.WriteLine();
+            tempResDate = EMPS.searchByDate(sDate);
+            st = tempResDate.ToString();
+            Console.WriteLine("--------Search_Result_By_Hire_Date--------");
+            Console.WriteLine(st);
             Console.WriteLine();
         }
     }

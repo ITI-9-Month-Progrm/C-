@@ -1,0 +1,13 @@
+D:\CSharp\Day05\Day05\Task1\bin\Debug\netcoreapp3.1\ThreeDPoint.exe
+D:\CSharp\Day05\Day05\Task1\bin\Debug\netcoreapp3.1\ThreeDPoint.deps.json
+D:\CSharp\Day05\Day05\Task1\bin\Debug\netcoreapp3.1\ThreeDPoint.runtimeconfig.json
+D:\CSharp\Day05\Day05\Task1\bin\Debug\netcoreapp3.1\ThreeDPoint.runtimeconfig.dev.json
+D:\CSharp\Day05\Day05\Task1\bin\Debug\netcoreapp3.1\ThreeDPoint.dll
+D:\CSharp\Day05\Day05\Task1\bin\Debug\netcoreapp3.1\ThreeDPoint.pdb
+D:\CSharp\Day05\Day05\Task1\obj\Debug\netcoreapp3.1\ThreeDPoint.csprojAssemblyReference.cache
+D:\CSharp\Day05\Day05\Task1\obj\Debug\netcoreapp3.1\ThreeDPoint.AssemblyInfoInputs.cache
+D:\CSharp\Day05\Day05\Task1\obj\Debug\netcoreapp3.1\ThreeDPoint.AssemblyInfo.cs
+D:\CSharp\Day05\Day05\Task1\obj\Debug\netcoreapp3.1\ThreeDPoint.csproj.CoreCompileInputs.cache
+D:\CSharp\Day05\Day05\Task1\obj\Debug\netcoreapp3.1\ThreeDPoint.dll
+D:\CSharp\Day05\Day05\Task1\obj\Debug\netcoreapp3.1\ThreeDPoint.pdb
+D:\CSharp\Day05\Day05\Task1\obj\Debug\netcoreapp3.1\ThreeDPoint.genruntimeconfig.cache
