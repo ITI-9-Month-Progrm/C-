@@ -11,13 +11,33 @@ namespace Task1
             if (int.TryParse(number, out no))
             {
                 return true;
-                //Response.Write(no.ToString() + " is a valid number!");
+                
             }
             else
             {
                 return false;
-               //Response.Write(no.ToString() + " is not a valid number!");
+               
             }
+        }
+        public static bool isString(string s)
+        {
+            int len;len = s.Length;
+            bool flag = true;
+            for(int i = 0; i < len; i++)
+            {
+                int no = 0;
+                if ((s[i]>='a' && s[i]<='z')||(s[i]>='A' && s[i] <='Z'))
+                {
+                    flag = true;
+
+                }
+                else
+                {
+                    flag = false;break;
+
+                }
+            }
+            return flag;
         }
 
 
@@ -30,19 +50,16 @@ namespace Task1
             Gender  gen=new Gender();
             Date Hdate=new Date();
             Security_Level Slevel=new Security_Level();
-            string g, sl, s,date,dateAgain;
+            string g, sl="", s,name,date,dateAgain;
             string[] splitDate;
             bool res = false;
             Employee[] emp = new Employee[3];
             len = emp.Length;
-            
-
-
-            for (int i = 0; i < len; i++)
+        for (int i = 0; i < len; i++)
             {
                 Console.WriteLine("\t\tPlease Enter Informaton of Employee " + (i + 1));
                 Console.WriteLine("Please Enter Emp_ID");
-                
+
                 res = false;
                 while (res == false)
                 {
@@ -51,32 +68,60 @@ namespace Task1
                     if (res) { id = int.Parse(s); }
                     else { Console.WriteLine("Please enter Correct number"); }
                 }
-
-                Console.WriteLine("Please Enter Emp_Security_Level");
-                sl = Console.ReadLine();
-                Slevel = (Security_Level)Enum.Parse(typeof(Security_Level), sl);
-
-                Console.WriteLine("Please Enter Emp_Salary");
+                do {
+                Console.WriteLine("Please Enter Emp_Name");
+                name = Console.ReadLine();
+                    } while (!isString(name));
+            
                 res = false;
-                while (res == false)
+            while (!res)
+            {
+                Console.WriteLine("Please Enter Emp_Security_Level");
+                Console.WriteLine("choose from Guest,Developer,Secretary,DBA");
+                sl = Console.ReadLine();
+                if (sl == "Guest" || sl == "Developer" || sl == "Secretary" || sl == "DBA")
                 {
-                    sal = double.Parse(Console.ReadLine());
-                    if (sal>=1200 || sal>=5000) { res = true; }
-                    else { Console.WriteLine("Please Enetr Correct Salary"); }
+                    res = true;
+                    Slevel = (Security_Level)Enum.Parse(typeof(Security_Level), sl);
                 }
+                else
+                {
+                    res = false;
+                }
+            }
+                
+
+                res = false;
+            while (res == false || sal < 1200 || sal > 5000)
+            {
+                Console.WriteLine("Please Enter Emp_Salary");
+                s = Console.ReadLine();
+                res = double.TryParse(s,out sal);
+
+            }
                 
                 do
-                {
-                    Console.WriteLine("Please Enetr Emp_HDate Like as 00/00/0000");
-                    
-                  date = Console.ReadLine();
-                  splitDate = date.Split("/");
-                   
-                    d = int.Parse(splitDate[0]);
-                    m = int.Parse(splitDate[1]);
-                    y = int.Parse(splitDate[2]);
+                  {
+                Console.WriteLine("Please Enetr Emp_HDate Like as 00/00/0000");
 
-                } while ((d<1 || d>31) || (m<1 || m>12) );
+                date = Console.ReadLine();
+
+                if (date == "///" || date == "" || date == "  /  /    " || date == " ")
+                { 
+                    res = false; 
+                }
+                else {
+                    splitDate = date.Split("/");
+                    res = false;
+                    res = int.TryParse(splitDate[0], out d);
+                    res = int.TryParse(splitDate[1], out m);
+                    res = int.TryParse(splitDate[2], out y);
+
+                }
+                
+
+
+            } while (!res ||(d < 1 || d > 31) || (m < 1 || m > 12) || (y<1900 || y>2021) );
 
                 Console.WriteLine("Please Enter Emp Gender If male Enter M other F");
                 
@@ -93,6 +138,7 @@ namespace Task1
                 }
                 
                 emp[i].setID(id);
+                emp[i].Name =name;
                 emp[i].setSecurityLevel(Slevel);
                 emp[i].setSalary(sal);
                 Hdate.Day = d;
@@ -126,7 +172,7 @@ namespace Task1
             }
             EmployeeSearch EMPS = new EmployeeSearch(emp);
            
-            Employee tempResId, tempResDate; string st;
+            Employee tempResId, tempResDate, tempResName; string st;
             
             Date sDate = new Date();
             
@@ -139,6 +185,11 @@ namespace Task1
             tempResDate = EMPS.searchByDate(sDate);
             st = tempResDate.ToString();
             Console.WriteLine("--------Search_Result_By_Hire_Date--------");
+            Console.WriteLine(st);
+            Console.WriteLine();
+            tempResName = EMPS.searchByName("ali");
+            st = tempResName.ToString();
+            Console.WriteLine("--------Search_Result_By_Name--------");
             Console.WriteLine(st);
             Console.WriteLine();
         }

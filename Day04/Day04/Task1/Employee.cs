@@ -12,6 +12,7 @@ namespace Task1
     struct Employee:IComparable
     {
         int id;
+        string name;
         Security_Level security_level;
         double salary;
         Date hire_date;
@@ -19,7 +20,7 @@ namespace Task1
         
         public override string ToString()
         {     ///,{Enum.Parse(typeof(Gender)},
-            return $"(EmpID :{id}, EmpSL :{security_level}, EmpHD :{hire_date.ToString()}, EmpSalary {(salary):C})";
+            return $"(EmpName : {name} , EmpID :{id}, EmpSL :{security_level}, EmpHD :{hire_date.ToString()}, EmpSalary {(salary):C})";
         }
 
         //answer 9
@@ -56,6 +57,11 @@ namespace Task1
             set { id = value; }
             get { return id; }
 
+        }
+        public string Name
+        {
+            set { name = value; }
+            get { return name; }
         }
         public Security_Level SecurityLevel
         {

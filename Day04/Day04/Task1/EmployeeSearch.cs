@@ -68,5 +68,21 @@ namespace Task1
             mid--;
             return empSearch[mid];
         }
+
+        //sequensial search
+        public Employee searchByName(string sName)
+        {
+            int len,res=0;len = empSearch.Length;
+            bool flag;
+            flag = false;
+            for(int i = 0; i < len; i++) { 
+                if(sName == empSearch[i].Name)
+                {
+                    res = i;
+                    flag = true;break;
+                }
+            }
+            return empSearch[res];       
+        }
     }
 }
