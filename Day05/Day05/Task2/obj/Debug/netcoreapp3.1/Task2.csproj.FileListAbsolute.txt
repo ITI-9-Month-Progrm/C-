@@ -1,0 +1,13 @@
+D:\CSharp\Day05\Day05\Task2\bin\Debug\netcoreapp3.1\Task2.exe
+D:\CSharp\Day05\Day05\Task2\bin\Debug\netcoreapp3.1\Task2.deps.json
+D:\CSharp\Day05\Day05\Task2\bin\Debug\netcoreapp3.1\Task2.runtimeconfig.json
+D:\CSharp\Day05\Day05\Task2\bin\Debug\netcoreapp3.1\Task2.runtimeconfig.dev.json
+D:\CSharp\Day05\Day05\Task2\bin\Debug\netcoreapp3.1\Task2.dll
+D:\CSharp\Day05\Day05\Task2\bin\Debug\netcoreapp3.1\Task2.pdb
+D:\CSharp\Day05\Day05\Task2\obj\Debug\netcoreapp3.1\Task2.csprojAssemblyReference.cache
+D:\CSharp\Day05\Day05\Task2\obj\Debug\netcoreapp3.1\Task2.AssemblyInfoInputs.cache
+D:\CSharp\Day05\Day05\Task2\obj\Debug\netcoreapp3.1\Task2.AssemblyInfo.cs
+D:\CSharp\Day05\Day05\Task2\obj\Debug\netcoreapp3.1\Task2.csproj.CoreCompileInputs.cache
+D:\CSharp\Day05\Day05\Task2\obj\Debug\netcoreapp3.1\Task2.dll
+D:\CSharp\Day05\Day05\Task2\obj\Debug\netcoreapp3.1\Task2.pdb
+D:\CSharp\Day05\Day05\Task2\obj\Debug\netcoreapp3.1\Task2.genruntimeconfig.cache

@@ -61,6 +61,7 @@ namespace ThreeDPoint
             res += point.high;
             return res;
         }
+        
         //answer 4
         public static bool operator ==(_3DPoint point1, _3DPoint point2)
         {

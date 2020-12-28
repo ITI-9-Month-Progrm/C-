@@ -6,13 +6,17 @@ namespace Task2
     {
         static void Main(string[] args)
         {
-            math operation=new math(0,0);
-            operation.Num1 = 2;
-            operation.Num2 = 4;
-            Console.WriteLine("Adding Result"+operation.Add());
-            Console.WriteLine("Subtract Result"+operation.Subtract());
-            Console.WriteLine("Multiply Result"+operation.Multiply());
-            Console.WriteLine("Divid Result"+operation.Divide());
+            math operation =new math();
+            int Num1 = 2,Num2 = 4;
+            Console.WriteLine("Adding Result : "+" "+operation.Add(Num1,Num2));
+            Console.WriteLine("Subtract Result : " + " " + operation.Subtract(Num1, Num2));
+            Console.WriteLine("Multiply Result : " + " " + operation.Multiply(Num1, Num2));
+            Console.WriteLine("Divid Result : " + " " + operation.Divide(Num1, Num2));
+            Console.WriteLine("-----------------------Static-----------------------");
+            Console.WriteLine("Adding Result : " + " " + mathStatic.Add(Num1, Num2));
+            Console.WriteLine("Subtract Result : " + " " + mathStatic.Subtract(Num1, Num2));
+            Console.WriteLine("Multiply Result : " + " " + mathStatic.Multiply(Num1, Num2));
+            Console.WriteLine("Divid Result : " + " " + mathStatic.Divide(Num1, Num2));
         }
     }
 }

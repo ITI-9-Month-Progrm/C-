@@ -1,0 +1,13 @@
+D:\CSharp\Day05\Day05\NIC\bin\Debug\netcoreapp3.1\NetworkInterfaceCard.exe
+D:\CSharp\Day05\Day05\NIC\bin\Debug\netcoreapp3.1\NetworkInterfaceCard.deps.json
+D:\CSharp\Day05\Day05\NIC\bin\Debug\netcoreapp3.1\NetworkInterfaceCard.runtimeconfig.json
+D:\CSharp\Day05\Day05\NIC\bin\Debug\netcoreapp3.1\NetworkInterfaceCard.runtimeconfig.dev.json
+D:\CSharp\Day05\Day05\NIC\bin\Debug\netcoreapp3.1\NetworkInterfaceCard.dll
+D:\CSharp\Day05\Day05\NIC\bin\Debug\netcoreapp3.1\NetworkInterfaceCard.pdb
+D:\CSharp\Day05\Day05\NIC\obj\Debug\netcoreapp3.1\NetworkInterfaceCard.csprojAssemblyReference.cache
+D:\CSharp\Day05\Day05\NIC\obj\Debug\netcoreapp3.1\NetworkInterfaceCard.AssemblyInfoInputs.cache
+D:\CSharp\Day05\Day05\NIC\obj\Debug\netcoreapp3.1\NetworkInterfaceCard.AssemblyInfo.cs
+D:\CSharp\Day05\Day05\NIC\obj\Debug\netcoreapp3.1\NetworkInterfaceCard.csproj.CoreCompileInputs.cache
+D:\CSharp\Day05\Day05\NIC\obj\Debug\netcoreapp3.1\NetworkInterfaceCard.dll
+D:\CSharp\Day05\Day05\NIC\obj\Debug\netcoreapp3.1\NetworkInterfaceCard.pdb
+D:\CSharp\Day05\Day05\NIC\obj\Debug\netcoreapp3.1\NetworkInterfaceCard.genruntimeconfig.cache

@@ -11,9 +11,12 @@ namespace ThreeDPoint
                 p3 = new _3DPoint(4, 5, 6),
                 p4;
             
+            
             int x, y, z;
             _3DPoint[] points = { new _3DPoint(1, 2, 3), new _3DPoint(1, 3, 3), new _3DPoint(1, 5, 4), new _3DPoint(8, 2, 3) };
+            
             Console.Write("Please Enter x Coordinate:");
+
             if(int.TryParse(Console.ReadLine(), out x))
             {
                 p1.Width = x;

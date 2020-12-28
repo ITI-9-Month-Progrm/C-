@@ -6,40 +6,25 @@ namespace Task2
 {
     class math
     {
-        int num1, num2;
-        //setter and getter
-        public math(int x,int y) {
-            num1 = x;
-            num2 = y;
-        }
-        public int Num1
-        {
-            set { num1 = value; }
-            get { return num1; }
-        }
-        public int Num2
-        {
-            set { num2 = value; }
-            get { return num2; }
-        }
+       
         
-        public int Add() {
+        public int Add(int Num1, int Num2) {
             int sum = 0;
             sum = Num1 + Num2;
             return sum;
             
         }
-        public int Subtract() {
+        public int Subtract(int Num1, int Num2) {
             int sub;
             sub = Num1 - Num2;
             return sub;
         }
-        public int Multiply() {
+        public int Multiply(int Num1, int Num2) {
             int mulp;
             mulp = Num1 * Num2;
             return mulp;
         }
-        public double Divide()
+        public double Divide(int Num1, int Num2)
         {
             double div;
             div = (double)Num1 / Num2;

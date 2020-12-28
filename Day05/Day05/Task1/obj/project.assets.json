@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CSharp\\Day05\\Day05\\Task1\\ThreeDPoint.csproj",
-      "projectName": "ThreeDPoint",
-      "projectPath": "D:\\CSharp\\Day05\\Day05\\Task1\\ThreeDPoint.csproj",
+      "projectUniqueName": "D:\\CSharp\\Day05\\Day05\\Task1\\Task1.csproj",
+      "projectName": "Task1",
+      "projectPath": "D:\\CSharp\\Day05\\Day05\\Task1\\Task1.csproj",
       "packagesPath": "C:\\Users\\Asmaa\\.nuget\\packages\\",
       "outputPath": "D:\\CSharp\\Day05\\Day05\\Task1\\obj\\",
       "projectStyle": "PackageReference",
