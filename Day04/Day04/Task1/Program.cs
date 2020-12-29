@@ -8,7 +8,7 @@ namespace Task1
         {
            
             int no = 0;
-            if (int.TryParse(number, out no))
+            if (int.TryParse(number, out no) && no>0)
             {
                 return true;
                 
@@ -105,13 +105,16 @@ namespace Task1
                 Console.WriteLine("Please Enetr Emp_HDate Like as 00/00/0000");
 
                 date = Console.ReadLine();
-
-                if (date == "///" || date == "" || date == "  /  /    " || date == " ")
-                { 
-                    res = false; 
-                }
-                else {
                     splitDate = date.Split("/");
+                    if (splitDate.Length != 3)
+                    {
+                        res = false;
+                    }
+
+
+
+                else {
+                    
                     res = false;
                     res = int.TryParse(splitDate[0], out d);
                     res = int.TryParse(splitDate[1], out m);

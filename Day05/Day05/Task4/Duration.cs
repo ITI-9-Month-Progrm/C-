@@ -14,9 +14,46 @@ namespace Task4
         }
         public Duration (int h,int m,int s)
         {
-            hours = h;
-            minutes = m;
-            seconds = s;
+            int remain, total,res;
+            bool flag;
+            if (m <= 60 && s <= 60)
+            {
+                hours = h;
+                minutes = m;
+                seconds = s;
+            }
+            else
+            {
+                flag = false;
+                while (!flag)
+                {
+                    if (s > 60)
+                    {
+                        res = (int)(s / 60);
+                        remain = s - (res * 60);
+                        s = remain;
+                        m += res;
+
+                        res = (int)(m / 60);//13 h
+                        remain = m - (res * 60);//22 min
+                        hours = h + res;   //h+13 hours
+                        minutes = remain; // 802 - 780}
+
+
+                    }
+                    else if(m>60)
+                    {
+                        res = (int)(m / 60);//13 h
+                        remain = m - (res * 60);//20 min
+                        hours = h + res;   //h+13 hours
+                        minutes = remain; // 800 - 780 
+                        seconds = s;
+                    }
+                    flag = true;
+
+                }
+            }
+       
         }
 
         public Duration(Duration oldDuration)
@@ -80,34 +117,43 @@ namespace Task4
         }
         public static Duration operator +(Duration D1,Duration D2)
         {
-            Duration D =new Duration();
-            D.hours = D1.Hours + D2.Hours;
-            D.minutes = D1.Minutes + D2.Minutes;
-            D.seconds = D1.Seconds + D2.Seconds;
+            int h, m, s;
+            
+            h = D1.Hours + D2.Hours;
+            m = D1.Minutes + D2.Minutes;
+            s = D1.Seconds + D2.Seconds;
+            Duration D = new Duration(h,m,s);
             return D;
         }
         public static Duration operator +(Duration D1, int totalSec)
         {
-            Duration D = new Duration();
+            int h, m, s;
             Duration D2 = new Duration(totalSec);
-            D.hours = D1.Hours + D2.Hours;
-            D.minutes = D1.Minutes + D2.Minutes;
-            D.seconds = D1.Seconds + D2.Seconds;
+            h = D1.Hours + D2.Hours;
+            m = D1.Minutes + D2.Minutes;
+            s = D1.Seconds + D2.Seconds;
+            Duration D = new Duration(h, m, s);
             return D;
         }
         public static Duration operator +(int totalSec,Duration D1)
         {
-            Duration D = new Duration();
+            
+            int h, m, s;
             Duration D2 = new Duration(totalSec);
-            D.hours = D1.Hours + D2.Hours;
-            D.minutes = D1.Minutes + D2.Minutes;
-            D.seconds = D1.Seconds + D2.Seconds;
+            h = D1.Hours + D2.Hours;
+            m = D1.Minutes + D2.Minutes;
+            s = D1.Seconds + D2.Seconds;
+            Duration D = new Duration(h,m,s);
             return D;
         }
 
-        public static explicit operator DateTime(Duration v)
+        public static explicit  operator DateTime(Duration v)
         {
-            DateTime obj = (DateTime)v;
+            int h, m, s;
+            h = v.Hours;m = v.Minutes;s = v.Seconds;
+            DateTime obj = new DateTime(2020,12,29,h,m,s);
+
+                
             return obj ;
         }
 
@@ -145,17 +191,55 @@ namespace Task4
         }
         public static Duration operator -(Duration D1,Duration D2)
         {
-            D1.Hours -= D2.Hours;
-            D1.Minutes -= D2.Minutes;
-            D1.Seconds -= D2.Seconds;
-            return D1;
+            if (D1 > D2) {
+                D1.Hours -= D2.Hours;
+                D1.Minutes -= D2.Minutes;
+                D1.Seconds -= D2.Seconds;
+                return D1;
+            }
+            else
+            {
+                D2.Hours -= D1.Hours;
+                D2.Minutes -= D1.Minutes;
+                D2.Seconds -= D1.Seconds;
+                return D2;
+            }
+            
 
         }
         public static bool operator >(Duration D1, Duration D2) {
-            return ((D1.Hours > D2.Hours) && (D1.Minutes > D2.Minutes) && (D1.Seconds > D2.Seconds)) ;
+            if(D1.Hours > D2.Hours)
+            {
+                return true;
+            }
+            else if(D1.Hours == D2.Hours)
+            {
+                if(D1.Minutes > D2.Minutes) { return true; }
+                else if(D1.Minutes == D2.Minutes)
+                {
+                    return D1.Seconds > D2.Seconds;
+                }
+                else { return false; }
+            }
+            else { return false; }
+           // return ((D1.Hours > D2.Hours) && (D1.Minutes > D2.Minutes) && (D1.Seconds > D2.Seconds)) ;
         }
         public static bool operator <(Duration D1, Duration D2) {
-            return ((D1.Hours < D2.Hours) && (D1.Minutes < D2.Minutes) && (D1.Seconds < D2.Seconds));
+            if (D1.Hours < D2.Hours)
+            {
+                return true;
+            }
+            else if (D1.Hours == D2.Hours)
+            {
+                if (D1.Minutes < D2.Minutes) { return true; }
+                else if (D1.Minutes == D2.Minutes)
+                {
+                    return D1.Seconds < D2.Seconds;
+                }
+                else { return false; }
+            }
+            else { return false; }
+            //return ((D1.Hours < D2.Hours) && (D1.Minutes < D2.Minutes) && (D1.Seconds < D2.Seconds));
         }
         public static bool operator >=(Duration D1, Duration D2)
         {

@@ -17,6 +17,9 @@ namespace Task4
                      D7 = new Duration(),
                      D8 = new Duration(),
                      D9 = new Duration();
+            Duration D10 =new Duration(1, 1000, 2);
+            Duration D11 = new Duration(1, 800, 130);
+            Duration D12 = new Duration();
 
 
             res =D.ToString();
@@ -75,7 +78,13 @@ namespace Task4
             {
                Console.WriteLine("FALAE"); 
             }
-            DateTime Obj = (DateTime)D1;
+            DateTime Obj = (DateTime)D;
+            Console.WriteLine("Date_Time:"+Obj.ToString());
+            Console.WriteLine("---------------------");
+            Console.WriteLine(D10.ToString());
+            Console.WriteLine(D11.ToString());
+            D12 = D10 + D11;
+            Console.WriteLine(D12.ToString());
         }
     }
 }
