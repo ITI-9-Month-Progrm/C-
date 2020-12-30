@@ -10,14 +10,14 @@ namespace NetworkInterfaceCard
         Type kind;
         string macAddress;
         string manufacture;
-
-
-        //public static NIC NICard { get; } = new NIC("IEEE","xxx123456789","");
-        public string Manufacture
-        {
-            set { manufacture = value; }
-            get { return manufacture; }
+        //singleton design pattern
+        NIC(string _manufacture,string _macAddress,Type _kind) {
+            manufacture = _manufacture;
+            macAddress = _macAddress;
+            kind = _kind;
         }
+        public static NIC createNIC { get; } = new NIC("IEEE", "111",Type.Ethernet);
+
 
 
 
