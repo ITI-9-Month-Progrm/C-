@@ -8,9 +8,11 @@ namespace Day06
 {
     class FinalExam:Exam
     {
+        
         public override void ShowExam()
         {
-            Console.WriteLine("Show Questions and Answers ");
+            Console.WriteLine("Final Exam Class");
         }
+        
     }
 }

@@ -8,5 +8,11 @@ namespace Day06
 {
     class Answer
     {
+        string result;
+        public Answer(string res)
+        {
+            result = res;
+        }
+        public string Result{ set { result = value; }get { return result; } }
     }
 }

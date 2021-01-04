@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Day06
 {
-    class QuestionList:List<BasicQuestion>
+    class QuestionList<T>:List<T>
     {
+
+        List<BasicQuestion> L = new List<BasicQuestion>();
+        //BasicQuestion x = new BasicQuestion("aa", "aaa", 12.5);
+        //L.Add(x);
     }
 }

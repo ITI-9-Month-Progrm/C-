@@ -10,7 +10,7 @@ namespace Day06
     {
         public override void ShowExam()
         {
-            Console.WriteLine("the right answer after finishing taking the Exam ");
+            Console.WriteLine("Practice Exam Class");
         }
     }
 }

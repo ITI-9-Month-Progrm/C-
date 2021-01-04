@@ -10,9 +10,10 @@ namespace Day06
     {
         string body, header;
         double marks;
-        Answer answer;
+        Answer answerRes;
+        AnswerList answers;
         public BasicQuestion() { }
-        public BasicQuestion(string b, double m, string h)
+        public BasicQuestion(string b, string h, double m)
         {
             body = b;
             marks = m;
@@ -21,6 +22,7 @@ namespace Day06
         public string Body { set { body = value; } get { return body; } }
         public string Header { set { header = value; } get { return header; } }
         public double Marks { set { marks = value; } get { return marks; } }
+        public Answer AnswerRes { set { answerRes = value; } get { return answerRes; } }
 
     }
 }
