@@ -8,12 +8,19 @@ namespace Day06
 {
     class ChooseAllQuestion:BasicQuestion
     {
-        Answer[] ansArr ;
-        AnswerList L;
-        public ChooseAllQuestion(string q, double m, string a, AnswerList l, Answer[] f)
+        List<Answer> ansArr ;
+       
+        public ChooseAllQuestion(string body, double m, string header, AnswerList l, List<Answer> f):base(body,header,m,l)
         {
             ansArr = f;
-            L = l;
+            
+        }
+        
+        public List<Answer>AnsArr { set => ansArr = value; get => ansArr; }
+        public override void Show_Question()
+        {
+            var answer = string.Join<Answer>(",", AnsArr);
+            Console.WriteLine($"{Body} Your Answer Must be From : {answer} ({Marks}Marks)");
         }
     }
 }

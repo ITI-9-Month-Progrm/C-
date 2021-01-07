@@ -1,16 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Day06
 {
-    class QuestionList<T>:List<T>
+    class QuestionList:List<BasicQuestion>
     {
 
-        List<BasicQuestion> L = new List<BasicQuestion>();
-        //BasicQuestion x = new BasicQuestion("aa", "aaa", 12.5);
-        //L.Add(x);
+
+        public new void Add(BasicQuestion q)
+        {
+            string path = "D:\\CSharp\\Day06\\Day06\\test.txt";
+            base.Add(q);
+            
+            using (StreamWriter STW = File.AppendText(path)) { STW.WriteLine(q.ToString()); }
+        }
     }
 }

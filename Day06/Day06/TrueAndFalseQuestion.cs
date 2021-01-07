@@ -8,13 +8,18 @@ namespace Day06
 {
     class TrueAndFalseQuestion : BasicQuestion
     {
-        Answer ans;
+        Answer ansTF;
         AnswerList L;
-        public TrueAndFalseQuestion(string q, double m, string a, AnswerList l, Answer f)
+        public TrueAndFalseQuestion(string body, double m, string header, AnswerList l, Answer f):base(body,header,m,l)
         {
-            ans = f;
-            L = l;
+            ansTF = f;
+            
         }
-        //public Answer Ans{set{ ans = value; }get { return ans;} }
+       public Answer AnsTF{set{ ansTF = value; }get { return ansTF;} }
+        public override void Show_Question()
+        {
+            
+            Console.WriteLine($"{Body} Your Answer Must be From : {ansTF} ({Marks}Marks)");
+        }
     }
 }

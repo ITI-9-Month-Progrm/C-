@@ -1,0 +1,13 @@
+D:\CSharp\Day09\Day09\bin\Debug\netcoreapp3.1\Day09.exe
+D:\CSharp\Day09\Day09\bin\Debug\netcoreapp3.1\Day09.deps.json
+D:\CSharp\Day09\Day09\bin\Debug\netcoreapp3.1\Day09.runtimeconfig.json
+D:\CSharp\Day09\Day09\bin\Debug\netcoreapp3.1\Day09.runtimeconfig.dev.json
+D:\CSharp\Day09\Day09\bin\Debug\netcoreapp3.1\Day09.dll
+D:\CSharp\Day09\Day09\bin\Debug\netcoreapp3.1\Day09.pdb
+D:\CSharp\Day09\Day09\obj\Debug\netcoreapp3.1\Day09.AssemblyInfoInputs.cache
+D:\CSharp\Day09\Day09\obj\Debug\netcoreapp3.1\Day09.AssemblyInfo.cs
+D:\CSharp\Day09\Day09\obj\Debug\netcoreapp3.1\Day09.csproj.CoreCompileInputs.cache
+D:\CSharp\Day09\Day09\obj\Debug\netcoreapp3.1\Day09.dll
+D:\CSharp\Day09\Day09\obj\Debug\netcoreapp3.1\Day09.pdb
+D:\CSharp\Day09\Day09\obj\Debug\netcoreapp3.1\Day09.genruntimeconfig.cache
+D:\CSharp\Day09\Day09\obj\Debug\netcoreapp3.1\Day09.csprojAssemblyReference.cache

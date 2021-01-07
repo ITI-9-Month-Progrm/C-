@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Day06
 {
-    class AnswerList:List<Answer>
+     class AnswerList
     {
-        List<Answer> L = new List<Answer>();
-        public AnswerList(Answer[] arrAnswer)
+        List<Answer> answersList= new List<Answer>();
+        public AnswerList(List<Answer> arrAnswer)
         {
-            for(int i = 0; i < arrAnswer.Length; i++)
+            for(int i = 0; i < arrAnswer?.Count; i++)
             {
-                L.Add(arrAnswer[i]);
+                answersList.Add(arrAnswer[i]);
             }
         }
+       public List<Answer> AnswersList { set => answersList = value; get=>answersList; }
     }
 }

@@ -14,5 +14,8 @@ namespace Day06
             result = res;
         }
         public string Result{ set { result = value; }get { return result; } }
+
+        public override string ToString() => $"Answer is : {Result}";
+
     }
 }

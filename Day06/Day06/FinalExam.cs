@@ -8,6 +8,7 @@ namespace Day06
 {
     class FinalExam:Exam
     {
+        public FinalExam(int time,int num, Dictionary<BasicQuestion, Answer> d) : base(time, num, d) { }
         
         public override void ShowExam()
         {
