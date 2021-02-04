@@ -1,5 +1,6 @@
 ﻿using System;
 using static Task2.ListGenerators;
+using static Task2.ckeckCharacters;
 using System.Linq;
 using System.IO;
 
@@ -308,6 +309,199 @@ namespace Task2
             }*/
 
             #endregion
+
+            #region LINQ - Projection Operators
+            /*
+            //Q1 :Return a sequence of just the names of a list of products
+            var Result41 = ProductList.Select(p => p.ProductName);
+            foreach (var item in Result41)
+                Console.WriteLine(item);
+            
+            //Q2 :Produce a sequence of the uppercase and lowercase
+            //versions of each word in the original array (Anonymous Types).
+            string[] wordsProjection = { "aPPLE", "BlUeBeRrY", "cHeRry" };
+            var Result42 = wordsProjection.Select(w => 
+            new { UPPPER_CASE = w.ToUpper(), LOWER_CASE = w.ToLower() });
+            foreach (var item in Result42)
+                Console.WriteLine(item);
+            //Q3 :Produce a sequence containing some properties of Products,
+            //including UnitPrice which is renamed to Price in the resulting type.
+            var Result43 = ProductList.Select(p => new {Product_Name=p.ProductName, Price = p.UnitPrice });
+            foreach (var item in Result43)
+                Console.WriteLine(item);
+           
+            //Q4 : Determine if the value of ints in an array match their position in the array.
+               int[] ArrProjection = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+                var selectSet = ArrProjection.Select((a, i) => (a == i) ? true : false);
+                var Result44 = ArrProjection.Zip(selectSet, (num, place) => num + " : " + place);
+                Console.WriteLine("Number: In-place?");
+                foreach (var item in Result44)
+                    Console.WriteLine(item);
+             
+            //Q5 :Returns all pairs of numbers from both arrays such that
+            //the number from numbersA is less than the number from numbersB.
+            int[] numbersA = { 0, 2, 4, 5, 6, 8, 9 };
+            int[] numbersB = { 1, 3, 5, 7, 8 };
+            var i = " is less than";
+            var Result45 =
+                from A in numbersA
+                from B in numbersB
+                where A < B
+                select new { A,i,B };
+            Console.WriteLine("Pairs where a < b:");
+            foreach (var item in Result45)
+                Console.WriteLine(item);
+           
+            //Q6 :Select all orders where the order total is less than 500.00
+           
+            var Result46 =(from c in CustomerList
+                           from o in c.Orders
+                           where o.Total < 500
+                           select new { o.OrderID }).Distinct();
+            foreach (var item in Result46)
+                Console.WriteLine(item);
+
+
+            //Q7 :Select all orders where the order was made in 1998 or later.
+            var Result47 = (from c in CustomerList
+                            from o in c.Orders
+                            where o.OrderDate.Year <= 1998
+                            select new { o.OrderID }).Distinct();
+            foreach (var item in Result47)
+                Console.WriteLine(item);
+            */
+
+
+            #endregion
+
+            #region LINQ - Quantifiers
+            /*
+            //Q1 :Determine if any of the words in dictionary_english.txt 
+            //(Read dictionary_english.txt into Array of String First) contain the substring 'ei'.
+            string filePathQAny =
+                "D:\\CSharp\\Day11\\Task2\\bin\\Debug\\net5.0\\dictionary_english.txt";
+            var linesQAny = File.ReadAllLines(filePathQAny);
+
+            var Result51 = linesQAny.Select(l =>new {word=l.ToLower(),value= l.Contains("ei") } ).Take(20);
+            foreach (var item in Result51)
+                Console.WriteLine(item);
+            
+            //Q2 :Return a grouped a list of products only for categories 
+            //that have at least one product that is out of stock.
+            var catgFound = ProductList.GroupBy(p => p.Category);
+            
+            var Result52 = catgFound.Where(C => C.Any(ProductList => ProductList.UnitsInStock == 0));
+            foreach (var item in Result52)
+            {
+                Console.WriteLine("Category_Name :  "+item.Key);
+                foreach (var value in item)
+                {
+                    Console.WriteLine("ProductID : " + value.ProductID + "-->" + "ProductName : " + " " + value.ProductName + "-->" + "UnitsInStock : " + " " + value.UnitsInStock);
+                }
+
+            }
+
+             //Q3 :Return a grouped a list of products only for categories
+            //that have all of their products in stock
+            
+            var catgFound = ProductList.GroupBy(p => p.Category);
+            var Result53 = catgFound.Where(C => C.All(ProductList => ProductList.UnitsInStock != 0));
+            foreach (var item in Result53)
+            {
+                Console.WriteLine("Category_Name :  "+item.Key);
+                foreach (var value in item)
+                {
+                    Console.WriteLine("ProductID : " + value.ProductID + "-->" + "ProductName : " + " " + value.ProductName + "-->" + "UnitsInStock : " + " " + value.UnitsInStock);
+                }
+
+            }
+             */
+            #endregion
+
+            #region LINQ - Grouping Operators
+            /*
+            //Q1 :Use group by to partition a list of numbers by their remainder when divided by 5
+              int[] dividedArr = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 };
+            var Reminder0 = dividedArr.GroupBy(d => d % 5 == 0);
+            var Result650 = Reminder0.Where(r => r.Key == true);
+            Console.WriteLine("Numbers with a remainder of 0 when divided by 5: ");
+            foreach (var item in Result650)
+            { 
+              foreach(var value in item)
+                {
+                    Console.WriteLine(value);
+                }
+            }
+            var Reminder1= dividedArr.GroupBy(d => d % 5 == 1);
+            var Result651 = Reminder1.Where(r => r.Key == true);
+            Console.WriteLine("Numbers with a remainder of 1 when divided by 5: ");
+            foreach (var item in Result651)
+            {
+                foreach (var value in item)
+                {
+                    Console.WriteLine(value);
+                }
+            }
+            var Reminder2 = dividedArr.GroupBy(d => d % 5 == 2);
+            var Result652 = Reminder2.Where(r => r.Key == true);
+            Console.WriteLine("Numbers with a remainder of 2 when divided by 5: ");
+            foreach (var item in Result652)
+            {
+                foreach (var value in item)
+                {
+                    Console.WriteLine(value);
+                }
+            }
+            var Reminder3 = dividedArr.GroupBy(d => d % 5 == 3);
+            var Result653 = Reminder3.Where(r => r.Key == true);
+            Console.WriteLine("Numbers with a remainder of 3 when divided by 5: ");
+            foreach (var item in Result653)
+            {
+                foreach (var value in item)
+                {
+                    Console.WriteLine(value);
+                }
+            }
+            var Reminder4 = dividedArr.GroupBy(d => d % 5 == 4);
+            var Result654 = Reminder4.Where(r => r.Key == true);
+            Console.WriteLine("Numbers with a remainder of 4 when divided by 5: ");
+            foreach (var item in Result654)
+            {
+                foreach (var value in item)
+                {
+                    Console.WriteLine(value);
+                }
+            }
+
+            //Q2 :Uses group by to partition a list of words by their first letter.
+            //Use dictionary_english.txt for Input
+             //--xxxxxx
+            string filePathGrouping =
+                "D:\\CSharp\\Day11\\Task2\\bin\\Debug\\net5.0\\test.txt";
+            var linesGrouping = File.ReadAllLines(filePathGrouping);
+            var Result62 = linesGrouping.GroupBy(l => l.ElementAt(0));
+            foreach(var item in Result62)
+            {
+                Console.WriteLine(item.Key);
+                foreach(var value in item)
+                {
+                    Console.WriteLine(value);
+                }
+            }
+            //Q3 : Use Group By with a custom comparer 
+            //that matches words that are consists of the same Characters Together
+            string[] ArrGroupBy = { "from   ", " salt", " earn ", "  last   ", " near ", " form  " };
+            
+            var Result63 = ArrGroupBy.Where((arr,i) => theSameCharacters(arr[i], arr[++i]);
+             */
+
+
+
+            #endregion
+
+
+
+
 
         }
     }
