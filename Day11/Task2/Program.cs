@@ -124,15 +124,23 @@ namespace Task2
 
             Console.WriteLine("The length of the shortest word in dictionary_english.txt  : " + minCount + " -> Length is : " + minCount.Length);
             
-            //Q8 Get the cheapest price among each category's products --xxxx
-            var Result28 = ProductList.Min(p => p.UnitPrice);
-            Console.WriteLine($"{Result28:C}");
+            //Q8 Get the cheapest price among each category's products 
+            var Result28 = ProductList.GroupBy(p => p.Category).Select(p => 
+              new {catg_Name=p.Key , The_cheapest_Price=p.Min(p => p.UnitPrice)});
+             foreach(var item in Result28)
+             {
+                 Console.WriteLine("The Cheapeast Price: " + item);
+             }
 
-            //Q9  Get the products with the cheapest price in each category (Use Let)
-            var Result29 = ProductList.GroupBy(p => p.Category);
+             //Q9 Get the products with the cheapest price in each category (Use Let)
+              var Result29 =
+                from p in ProductList
+                group p by p.Category into catg
+                let cheapest = catg.Aggregate((atr1, atr2) => (atr1.UnitPrice < atr2.UnitPrice) ? atr1 : atr2)
+                select new { catg_Name = catg.Key, Product_Name = cheapest.ProductName, cheapest_Price = cheapest.UnitPrice };
             foreach (var item in Result29)
             {
-                Console.WriteLine("Product category : " + item.Key + " --> " + item.Min(i => i.UnitPrice));
+                Console.WriteLine(item);
             }
             
             //Q10 Get the length of the longest word in dictionary_english.txt 
@@ -147,14 +155,23 @@ namespace Task2
 
             Console.WriteLine("The length of the Longest word in dictionary_english.txt  : " + maxCount + " -> Length is : " + maxCount.Length);
 
-            //Q11 --xxxxx Get the most expensive price among each category's products
-            var Result211 = ProductList.Max(p => p.UnitPrice);
-            Console.WriteLine($"{Result211:C}");
-            //Q12 Get the products with the most expensive price in each category -xxx
-            var Result212 = ProductList.GroupBy(p => p.Category); 
+            //Q11 Get the most expensive price among each category's products.
+            var Result211 = ProductList.GroupBy(p => p.Category).Select(p =>
+                new { catg_Name=p.Key , The_most_expensive_Price = p.Max(p => p.UnitPrice) });
+            foreach (var item in Result211)
+            {
+                Console.WriteLine( item);
+            }
+            //Q12 Get the products with the most expensive price in each category.
+
+            var Result212 =
+                from p in ProductList
+                group p by p.Category into catg
+                let mostExpensive = catg.Aggregate((atr1, atr2) => (atr1.UnitPrice > atr2.UnitPrice) ? atr1 : atr2)
+                select new { catg_Name = catg.Key, Product_Name = mostExpensive.ProductName, MostExpensivePrice = mostExpensive.UnitPrice };
             foreach (var item in Result212)
             {
-                Console.WriteLine("(" + item.Key + " )MaxAmount = " + item.Max(P => P.UnitPrice) );
+                Console.WriteLine(item);
             }
             //Q13 Get the average length of the words in dictionary_english.txt 
             //(Read dictionary_english.txt into Array of String First).
@@ -250,23 +267,46 @@ namespace Task2
            */
             #endregion
 
-            #region Correct Answers
+            #region Correct Answers For Aggregate region
             //Q8 : Get the cheapest price among each category's products
-            /*var Result28 = ProductList.GroupBy(p => p.Category);
-            foreach(var item in Result28)
-            {
-                Console.WriteLine("Product category : " + item.Key + " --> " + item.Min(i => i.UnitPrice));
-            }
 
-            //Q8 Get the cheapest price among each category's products
-            var Result28 = ProductList.GroupBy(p => p.ProductName).Min();
-            Console.WriteLine(Result28);
-            //Q9 Get the products with the cheapest price in each category (Use Let)
-            /*var Result29 = ProductList.GroupBy(p => p.Category);
+            /* var Result28 = ProductList.GroupBy(p => p.Category).Select(p => 
+              new {catg_Name=p.Key , The_cheapest_Price=p.Min(p => p.UnitPrice)});
+             foreach(var item in Result28)
+             {
+                 Console.WriteLine("The Cheapeast Price: " + item);
+             }
+
+             //Q9 Get the products with the cheapest price in each category (Use Let)
+              var Result29 =
+                from p in ProductList
+                group p by p.Category into catg
+                let cheapest = catg.Aggregate((atr1, atr2) => (atr1.UnitPrice < atr2.UnitPrice) ? atr1 : atr2)
+                select new { catg_Name = catg.Key, Product_Name = cheapest.ProductName, cheapest_Price = cheapest.UnitPrice };
             foreach (var item in Result29)
             {
-                Console.WriteLine("Product category : " + item.Key + " --> " + item.Min(i => i.UnitPrice));
+                Console.WriteLine(item);
+            }
+             
+            //Q11 Get the most expensive price among each category's products.
+            var Result211 = ProductList.GroupBy(p => p.Category).Select(p =>
+                new { catg_Name=p.Key , The_most_expensive_Price = p.Max(p => p.UnitPrice) });
+            foreach (var item in Result211)
+            {
+                Console.WriteLine( item);
+            }
+            //Q12 Get the products with the most expensive price in each category.
+
+            var Result212 =
+                from p in ProductList
+                group p by p.Category into catg
+                let mostExpensive = catg.Aggregate((atr1, atr2) => (atr1.UnitPrice > atr2.UnitPrice) ? atr1 : atr2)
+                select new { catg_Name = catg.Key, Product_Name = mostExpensive.ProductName, MostExpensivePrice = mostExpensive.UnitPrice };
+            foreach (var item in Result212)
+            {
+                Console.WriteLine(item);
             }*/
+
             #endregion
 
         }
