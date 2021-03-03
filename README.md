@@ -6,7 +6,7 @@ Basics and Advanced C#
 * C# interfaces
 * Event Handler
 # Day10 to Day11
-*Linq
+* Linq
 # Day12 to Day14
-*Windows form Application
-*Entity Framework
+* Windows form Application
+* Entity Framework
