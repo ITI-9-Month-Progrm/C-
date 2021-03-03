@@ -19,10 +19,51 @@ namespace Task2
         static void Main(string[] args)
         {
 
+            #region LINQ - Restriction Operators
+            //Q1 Find all products that are out of stock.
+            var Result1_1 = ProductList.Where(P => P.UnitsInStock == 0);
+            foreach (var item in Result1_1)
+            {
+                Console.WriteLine(item);
+            }
 
+            //Q2 Find all products that are in stock and cost more than 3.00 per unit.
+            var Result1_2 = ProductList.Where(P => P.UnitsInStock > 0 && P.UnitPrice > 3);
+
+            foreach (var item in Result1_2)
+            {
+                Console.WriteLine(item);
+            }
+            //Q3 Returns digits whose name is shorter than their value
+            string[] Arr = { "zero", "one", "two",
+                              "three", "four", "five",
+                              "six", "seven", "eight", "nine" };
+            var Result1_3 = Arr.Where((s, i) => s.Length < i);
+            foreach (var item in Result1_3)
+            {
+                Console.WriteLine(item);
+            }
+
+            //--------------------------------------------------------------
+            #endregion
+
+            #region LINQ - Element Operators
+            //Q1 Get first Product out of Stock 
+            var Element = ProductList.FirstOrDefault(P => P.UnitsInStock == 0);
+            Console.WriteLine(Element);
+            //Q2 Return the first product whose Price > 1000, 
+            //unless there is no match, in which case null is returned.
+            var Element1 = ProductList.FirstOrDefault(P => P.UnitPrice > 1000);
+            Console.WriteLine(Element1?.ProductName ?? "NULL");
+            //Q3 Retrieve the second number greater than 5 
+            int[] ArrInt = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            var Result2_3 = ArrInt.Where(i => i > 5);
+            var Element2 = Result2_3.ElementAt(1);
+            Console.WriteLine("The Second Element : " + Element2);
+            #endregion
 
             #region LINQ - Set Operators
-            /*
+            
             //Q1:Find the unique Category names from Product List
             var Result11 = ProductList.Select(p => p.Category).Distinct();
             foreach(var item in Result11)
@@ -64,15 +105,15 @@ namespace Task2
             foreach (var item in Result15)
             {
                 Console.WriteLine(item);
-            }*/
+            }
 
             #endregion
 
             #region LINQ - Aggregate Operators
-            /*
+            
             //Q1 : Uses Count to get the number of odd numbers in the array
-            int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
-            var Result21 = Arr.Where(a => a % 2 != 0).Count();
+            int[] ArrAgr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            var Result21 = ArrAgr.Where(a => a % 2 != 0).Count();
             Console.WriteLine(Result21);
             //Q2 : Return a list of customers and how many orders each has
             var Result22 = (
@@ -98,9 +139,9 @@ namespace Task2
             var lines = File.ReadAllLines(filePath);
             
             var count = 0;
-            for (int i = 0; i < lines.Length; i++)
+            for (int ii = 0; ii < lines.Length; ii++)
             {
-                 count += lines[i].Count();
+                 count += lines[ii].Count();
 
             }
             Console.WriteLine("Number of Words into file : " + lines.Length);
@@ -124,17 +165,17 @@ namespace Task2
             Console.WriteLine("Number of Words into file : " + _lines.Length);
 
             Console.WriteLine("The length of the shortest word in dictionary_english.txt  : " + minCount + " -> Length is : " + minCount.Length);
-            
-            //Q8 Get the cheapest price among each category's products 
-            var Result28 = ProductList.GroupBy(p => p.Category).Select(p => 
-              new {catg_Name=p.Key , The_cheapest_Price=p.Min(p => p.UnitPrice)});
-             foreach(var item in Result28)
-             {
-                 Console.WriteLine("The Cheapeast Price: " + item);
-             }
 
-             //Q9 Get the products with the cheapest price in each category (Use Let)
-              var Result29 =
+            //Q8 Get the cheapest price among each category's products 
+            var Result28 = ProductList.GroupBy(p => p.Category).Select(p =>
+              new { catg_Name = p.Key, The_cheapest_Price = p.Min(p => p.UnitPrice) });
+            foreach (var item in Result28)
+            {
+                Console.WriteLine("The Cheapeast Price: " + item);
+            }
+
+            //Q9 Get the products with the cheapest price in each category (Use Let)
+            var Result29 =
                 from p in ProductList
                 group p by p.Category into catg
                 let cheapest = catg.Aggregate((atr1, atr2) => (atr1.UnitPrice < atr2.UnitPrice) ? atr1 : atr2)
@@ -143,7 +184,7 @@ namespace Task2
             {
                 Console.WriteLine(item);
             }
-            
+
             //Q10 Get the length of the longest word in dictionary_english.txt 
             //(Read dictionary_english.txt into Array of String First).
             string _filePath_ =
@@ -157,19 +198,20 @@ namespace Task2
             Console.WriteLine("The length of the Longest word in dictionary_english.txt  : " + maxCount + " -> Length is : " + maxCount.Length);
 
             //Q11 Get the most expensive price among each category's products.
+          
             var Result211 = ProductList.GroupBy(p => p.Category).Select(p =>
-                new { catg_Name=p.Key , The_most_expensive_Price = p.Max(p => p.UnitPrice) });
+                new { catg_Name = p.Key, The_most_expensive_Price = p.Max(p => p.UnitPrice) });
             foreach (var item in Result211)
             {
-                Console.WriteLine( item);
+                Console.WriteLine(item);
             }
             //Q12 Get the products with the most expensive price in each category.
 
             var Result212 =
-                from p in ProductList
-                group p by p.Category into catg
-                let mostExpensive = catg.Aggregate((atr1, atr2) => (atr1.UnitPrice > atr2.UnitPrice) ? atr1 : atr2)
-                select new { catg_Name = catg.Key, Product_Name = mostExpensive.ProductName, MostExpensivePrice = mostExpensive.UnitPrice };
+                 from p in ProductList
+                 group p by p.Category into catg
+                 let mostExpensive = catg.Aggregate((atr1, atr2) => (atr1.UnitPrice > atr2.UnitPrice) ? atr1 : atr2)
+                 select new { catg_Name = catg.Key, Product_Name = mostExpensive.ProductName, MostExpensivePrice = mostExpensive.UnitPrice };
             foreach (var item in Result212)
             {
                 Console.WriteLine(item);
@@ -191,7 +233,7 @@ namespace Task2
             {
                 Console.WriteLine("(" + item.Key + " )avgPrice = " + item.Average(P => P.UnitPrice));
             }
-            */
+
             #endregion
 
             #region LINQ - Ordering Operators
@@ -268,46 +310,49 @@ namespace Task2
            */
             #endregion
 
-            #region Correct Answers For Aggregate region
-            //Q8 : Get the cheapest price among each category's products
-
-            /* var Result28 = ProductList.GroupBy(p => p.Category).Select(p => 
-              new {catg_Name=p.Key , The_cheapest_Price=p.Min(p => p.UnitPrice)});
-             foreach(var item in Result28)
-             {
-                 Console.WriteLine("The Cheapeast Price: " + item);
-             }
-
-             //Q9 Get the products with the cheapest price in each category (Use Let)
-              var Result29 =
-                from p in ProductList
-                group p by p.Category into catg
-                let cheapest = catg.Aggregate((atr1, atr2) => (atr1.UnitPrice < atr2.UnitPrice) ? atr1 : atr2)
-                select new { catg_Name = catg.Key, Product_Name = cheapest.ProductName, cheapest_Price = cheapest.UnitPrice };
-            foreach (var item in Result29)
+            #region Linq-Partitioning Operators
+            //Q1 Get the first 3 orders from customers in Washington
+            var Result3_1 = CustomerList.Where(c => c.City == "London").Take(3);
+            foreach (var item in Result3_1)
             {
                 Console.WriteLine(item);
+                Console.WriteLine("---------------");
             }
-             
-            //Q11 Get the most expensive price among each category's products.
-            var Result211 = ProductList.GroupBy(p => p.Category).Select(p =>
-                new { catg_Name=p.Key , The_most_expensive_Price = p.Max(p => p.UnitPrice) });
-            foreach (var item in Result211)
-            {
-                Console.WriteLine( item);
-            }
-            //Q12 Get the products with the most expensive price in each category.
-
-            var Result212 =
-                from p in ProductList
-                group p by p.Category into catg
-                let mostExpensive = catg.Aggregate((atr1, atr2) => (atr1.UnitPrice > atr2.UnitPrice) ? atr1 : atr2)
-                select new { catg_Name = catg.Key, Product_Name = mostExpensive.ProductName, MostExpensivePrice = mostExpensive.UnitPrice };
-            foreach (var item in Result212)
+            //Q2 Get all but the first 2 orders from customers in Washington.
+            var Result3_2 = CustomerList.Where(c => c.City == "London").Skip(2);
+            foreach (var item in Result3_2)
             {
                 Console.WriteLine(item);
-            }*/
+                Console.WriteLine("---------------");
+            }
+            //Q3 Return elements starting from the beginning of the array until
+            //a number is hit that is less than its position in the array.
+            int i = 0;
+            int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            var Result3_3 = numbers.TakeWhile(num => num > i++);
+            foreach (var item in Result3_3)
+            {
+                Console.WriteLine(item);
 
+            }
+            //Q4 Get the elements of the array starting from the first element divisible by 3.
+            int[] numbersDiv = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            var Result3_4 = numbersDiv.SkipWhile(num => num % 3 != 0);
+            foreach (var item in Result3_4)
+            {
+                Console.WriteLine(item);
+
+            }
+            //Q5 Get the elements of the array starting from the first element less than its position.
+
+            int j = 0;
+            int[] numbersS = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            var Result3_5 = numbersS.SkipWhile(num => num > j++);
+            foreach (var item in Result3_5)
+            {
+                Console.WriteLine(item);
+
+            }
             #endregion
 
             #region LINQ - Projection Operators
@@ -419,7 +464,7 @@ namespace Task2
             #endregion
 
             #region LINQ - Grouping Operators
-            /*
+           
             //Q1 :Use group by to partition a list of numbers by their remainder when divided by 5
               int[] dividedArr = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 };
             var Reminder0 = dividedArr.GroupBy(d => d % 5 == 0);
@@ -472,28 +517,28 @@ namespace Task2
                     Console.WriteLine(value);
                 }
             }
+            /*
+           //Q2 :Uses group by to partition a list of words by their first letter.
+           //Use dictionary_english.txt for Input
+            //--xxxxxx
+           string filePathGrouping =
+               "D:\\CSharp\\Day11\\Task2\\bin\\Debug\\net5.0\\test.txt";
+           var linesGrouping = File.ReadAllLines(filePathGrouping);
+           var Result62 = linesGrouping.GroupBy(l => l.ElementAt(0));
+           foreach(var item in Result62)
+           {
+               Console.WriteLine(item.Key);
+               foreach(var value in item)
+               {
+                   Console.WriteLine(value);
+               }
+           }
+           //Q3 : Use Group By with a custom comparer 
+           //that matches words that are consists of the same Characters Together
+           string[] ArrGroupBy = { "from   ", " salt", " earn ", "  last   ", " near ", " form  " };
 
-            //Q2 :Uses group by to partition a list of words by their first letter.
-            //Use dictionary_english.txt for Input
-             //--xxxxxx
-            string filePathGrouping =
-                "D:\\CSharp\\Day11\\Task2\\bin\\Debug\\net5.0\\test.txt";
-            var linesGrouping = File.ReadAllLines(filePathGrouping);
-            var Result62 = linesGrouping.GroupBy(l => l.ElementAt(0));
-            foreach(var item in Result62)
-            {
-                Console.WriteLine(item.Key);
-                foreach(var value in item)
-                {
-                    Console.WriteLine(value);
-                }
-            }
-            //Q3 : Use Group By with a custom comparer 
-            //that matches words that are consists of the same Characters Together
-            string[] ArrGroupBy = { "from   ", " salt", " earn ", "  last   ", " near ", " form  " };
-            
-            var Result63 = ArrGroupBy.Where((arr,i) => theSameCharacters(arr[i], arr[++i]);
-             */
+           var Result63 = ArrGroupBy.Where((arr,i) => theSameCharacters(arr[i], arr[++i]);
+            */
 
 
 

@@ -1,0 +1,16 @@
+D:\CSharp\Day12\Task1\bin\Debug\netcoreapp3.1\Task1.exe
+D:\CSharp\Day12\Task1\bin\Debug\netcoreapp3.1\Task1.deps.json
+D:\CSharp\Day12\Task1\bin\Debug\netcoreapp3.1\Task1.runtimeconfig.json
+D:\CSharp\Day12\Task1\bin\Debug\netcoreapp3.1\Task1.runtimeconfig.dev.json
+D:\CSharp\Day12\Task1\bin\Debug\netcoreapp3.1\Task1.dll
+D:\CSharp\Day12\Task1\bin\Debug\netcoreapp3.1\Task1.pdb
+D:\CSharp\Day12\Task1\obj\Debug\netcoreapp3.1\Task1.csprojAssemblyReference.cache
+D:\CSharp\Day12\Task1\obj\Debug\netcoreapp3.1\Task1.Form1.resources
+D:\CSharp\Day12\Task1\obj\Debug\netcoreapp3.1\Task1.csproj.GenerateResource.cache
+D:\CSharp\Day12\Task1\obj\Debug\netcoreapp3.1\Task1.AssemblyInfoInputs.cache
+D:\CSharp\Day12\Task1\obj\Debug\netcoreapp3.1\Task1.AssemblyInfo.cs
+D:\CSharp\Day12\Task1\obj\Debug\netcoreapp3.1\Task1.csproj.CoreCompileInputs.cache
+D:\CSharp\Day12\Task1\obj\Debug\netcoreapp3.1\Task1.dll
+D:\CSharp\Day12\Task1\obj\Debug\netcoreapp3.1\Task1.pdb
+D:\CSharp\Day12\Task1\obj\Debug\netcoreapp3.1\Task1.genruntimeconfig.cache
+D:\CSharp\Day12\Task1\obj\Debug\netcoreapp3.1\Task1.Properties.Resources.resources
