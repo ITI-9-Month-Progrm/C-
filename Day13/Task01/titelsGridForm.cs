@@ -37,7 +37,7 @@ namespace Task01
             //one way Binding
             dataGridView1.DataSource = titleDataTable;
 
-            dataGridView1.Columns[0].ReadOnly = true;
+            //dataGridView1.Columns[0].ReadOnly = true;
 
 
             
@@ -64,14 +64,14 @@ namespace Task01
                 }
                 else
                 {
-                    //sqlCmd = new SqlCommand("insertNewData", sqlCn);
-                    
-                    //sqlCmd.Parameters.AddWithValue("@id", id);
-                    //sqlCmd.Parameters.AddWithValue("@title", "AAAAAAAAaa");
-                    //sqlCmd.Parameters.AddWithValue("@type", "TRRR");
-                    //sqlCmd.CommandType = CommandType.StoredProcedure;
-                    //DA.InsertCommand = sqlCmd;
-                    flag = 0;
+                    sqlCmd = new SqlCommand("insertNewData", sqlCn);
+
+                    sqlCmd.Parameters.AddWithValue("@id", id);
+                    sqlCmd.Parameters.AddWithValue("@title", "AAAAAAAAaa");
+                    sqlCmd.Parameters.AddWithValue("@type", "TRRR");
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    DA.InsertCommand = sqlCmd;
+
                 }
                 
             }
