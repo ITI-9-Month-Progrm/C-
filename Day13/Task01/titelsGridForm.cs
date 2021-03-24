@@ -64,13 +64,7 @@ namespace Task01
                 }
                 else
                 {
-                    sqlCmd = new SqlCommand("insertNewData", sqlCn);
-
-                    sqlCmd.Parameters.AddWithValue("@id", id);
-                    sqlCmd.Parameters.AddWithValue("@title", "AAAAAAAAaa");
-                    sqlCmd.Parameters.AddWithValue("@type", "TRRR");
-                    sqlCmd.CommandType = CommandType.StoredProcedure;
-                    DA.InsertCommand = sqlCmd;
+                  
 
                 }
                 
@@ -103,10 +97,49 @@ namespace Task01
         }
 
         //Save Changes
+        //Execute Insert Command
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+           
+
+            foreach (DataRow Dr in titleDataTable.Rows)
+            {
+                switch (Dr.RowState)
+                {
+
+                    case DataRowState.Added:
+                       insert(Dr);
+                        break;
+                }
+
+            }
             DA.Update(titleDataTable);
-            MessageBox.Show("Changes Done ^^");
+
+        }
+        private void insert(DataRow dataRow)
+        {
+            try
+            {
+
+                sqlCmd = new SqlCommand("insertNewData", sqlCn);
+
+                sqlCmd.Parameters.AddWithValue("@id", dataRow["title_id"]);
+                sqlCmd.Parameters.AddWithValue("@title", dataRow["title"]);
+                sqlCmd.Parameters.AddWithValue("@type", dataRow["type"]);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                DA.InsertCommand = sqlCmd;
+
+
+                MessageBox.Show("Added");
+
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                //getStudentsData();
+
+            }
         }
     }
 }

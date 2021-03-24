@@ -18,10 +18,37 @@ namespace Task02
             InitializeComponent();
         }
         SqlConnection sqlCon;
-        SqlCommand sqlCmd;
+        SqlCommand sqlCmd, sqlCmdInsert, sqlCmdUpdate, sqlCmdDelete;
         SqlDataAdapter DA;
         DataTable titleDataTable;
         BindingSource BS;
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+
+            sqlCmdInsert.Parameters.AddWithValue("@id", txtID.Text);
+            sqlCmdInsert.Parameters.AddWithValue("@title", txtTitle.Text);
+            sqlCmdInsert.Parameters.AddWithValue("@type", txtType.Text);
+            DA.InsertCommand = sqlCmdInsert;
+            MessageBox.Show("Added");
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            sqlCmdUpdate.Parameters.AddWithValue("@id", txtID.Text);
+            sqlCmdUpdate.Parameters.AddWithValue("@title", txtTitle.Text);
+            sqlCmdUpdate.Parameters.AddWithValue("@type", txtType.Text);
+            DA.UpdateCommand = sqlCmdUpdate;
+            MessageBox.Show("Updated");
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            sqlCmdDelete.Parameters.AddWithValue("@deletedID", txtID.Text);
+            DA.DeleteCommand = sqlCmdDelete;
+            MessageBox.Show("Deleted");
+        }
+
         BindingNavigator BNav;
         private void DVForm_Load(object sender, EventArgs e)
         {
@@ -38,8 +65,7 @@ namespace Task02
             this.Controls.Add(BNav);
             BNav.Dock = DockStyle.Top;
             BNav.BindingSource = BS;
-
-
+            //Binding El Data
 
             txtID.DataBindings.Add("Text", BS, "title_id");
             txtTitle.DataBindings.Add("Text", BS, "title");
@@ -50,17 +76,26 @@ namespace Task02
             txtRoy.DataBindings.Add("Text", BS, "royalty");
             txtSales.DataBindings.Add("Text", BS, "ytd_sales");
             txtNote.DataBindings.Add("Text", BS, "notes");
-            txtDate.DataBindings.Add("Text", BS, "pubdate");
+            dateTimePicker1.DataBindings.Add("Text", BS, "pubdate");
+
+            //Insert, Update, Delete Commends
+            sqlCmdInsert = new SqlCommand("insertNewData", sqlCon);
+            sqlCmdInsert.CommandType = CommandType.StoredProcedure;
+
+            sqlCmdUpdate = new SqlCommand("updateByID", sqlCon);
+            sqlCmdUpdate.CommandType = CommandType.StoredProcedure;
+
+            sqlCmdDelete = new SqlCommand("deleteDataFromTitle", sqlCon);
+            sqlCmdDelete.CommandType = CommandType.StoredProcedure;
 
 
-            
 
+        }
 
-
-
-
-
-
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            BS.EndEdit();
+            DA.Update(titleDataTable);
         }
     }
 }
