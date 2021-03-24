@@ -9,4 +9,4 @@ Basics and Advanced C#
 * Linq
 # Day12 to Day14
 * Windows form Application
-* Entity Framework
+* ADO
