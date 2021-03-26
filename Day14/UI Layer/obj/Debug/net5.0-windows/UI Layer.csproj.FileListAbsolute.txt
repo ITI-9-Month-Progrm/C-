@@ -1,0 +1,44 @@
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\UI Layer.exe
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\UI Layer.deps.json
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\UI Layer.runtimeconfig.json
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\UI Layer.runtimeconfig.dev.json
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\UI Layer.dll
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\ref\UI Layer.dll
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\UI Layer.pdb
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\Microsoft.Data.SqlClient.dll
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\Microsoft.Identity.Client.dll
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Logging.dll
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Protocols.dll
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Tokens.dll
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\System.IdentityModel.Tokens.Jwt.dll
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\System.Runtime.Caching.dll
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\BusinessLogicLayer.dll
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\DataAccessLayer.dll
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\BusinessLogicLayer.pdb
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\DataAccessLayer.pdb
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\DataAccessLayer.dll.config
+D:\CSharp\Day14\UI Layer\obj\Debug\net5.0-windows\UI Layer.csprojAssemblyReference.cache
+D:\CSharp\Day14\UI Layer\obj\Debug\net5.0-windows\UI_Layer.GV_Form.resources
+D:\CSharp\Day14\UI Layer\obj\Debug\net5.0-windows\UI_Layer.LandingPage.resources
+D:\CSharp\Day14\UI Layer\obj\Debug\net5.0-windows\UI_Layer.Properties.Resources.resources
+D:\CSharp\Day14\UI Layer\obj\Debug\net5.0-windows\UI Layer.csproj.GenerateResource.cache
+D:\CSharp\Day14\UI Layer\obj\Debug\net5.0-windows\UI Layer.GeneratedMSBuildEditorConfig.editorconfig
+D:\CSharp\Day14\UI Layer\obj\Debug\net5.0-windows\UI Layer.AssemblyInfoInputs.cache
+D:\CSharp\Day14\UI Layer\obj\Debug\net5.0-windows\UI Layer.AssemblyInfo.cs
+D:\CSharp\Day14\UI Layer\obj\Debug\net5.0-windows\UI Layer.csproj.CoreCompileInputs.cache
+D:\CSharp\Day14\UI Layer\obj\Debug\net5.0-windows\UI Layer.csproj.CopyComplete
+D:\CSharp\Day14\UI Layer\obj\Debug\net5.0-windows\UI Layer.dll
+D:\CSharp\Day14\UI Layer\obj\Debug\net5.0-windows\ref\UI Layer.dll
+D:\CSharp\Day14\UI Layer\obj\Debug\net5.0-windows\UI Layer.pdb
+D:\CSharp\Day14\UI Layer\obj\Debug\net5.0-windows\UI Layer.genruntimeconfig.cache
+D:\CSharp\Day14\UI Layer\bin\Debug\net5.0-windows\UI Layer.dll.config
+D:\CSharp\Day14\UI Layer\obj\Debug\net5.0-windows\UI_Layer.DV_Form.resources

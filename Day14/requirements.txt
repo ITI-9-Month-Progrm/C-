@@ -1,0 +1,1 @@
+install "System.Configuration.ConfigurationManager" For Data Access Layer "DAL" 

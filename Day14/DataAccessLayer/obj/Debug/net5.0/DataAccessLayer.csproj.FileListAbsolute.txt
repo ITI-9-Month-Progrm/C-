@@ -1,0 +1,13 @@
+D:\CSharp\Day14\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.dll.config
+D:\CSharp\Day14\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.deps.json
+D:\CSharp\Day14\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.dll
+D:\CSharp\Day14\DataAccessLayer\bin\Debug\net5.0\ref\DataAccessLayer.dll
+D:\CSharp\Day14\DataAccessLayer\bin\Debug\net5.0\DataAccessLayer.pdb
+D:\CSharp\Day14\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csprojAssemblyReference.cache
+D:\CSharp\Day14\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\CSharp\Day14\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.AssemblyInfoInputs.cache
+D:\CSharp\Day14\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.AssemblyInfo.cs
+D:\CSharp\Day14\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\CSharp\Day14\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.dll
+D:\CSharp\Day14\DataAccessLayer\obj\Debug\net5.0\ref\DataAccessLayer.dll
+D:\CSharp\Day14\DataAccessLayer\obj\Debug\net5.0\DataAccessLayer.pdb

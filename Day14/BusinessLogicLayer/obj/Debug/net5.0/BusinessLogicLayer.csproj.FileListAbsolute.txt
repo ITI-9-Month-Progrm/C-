@@ -1,0 +1,16 @@
+D:\CSharp\Day14\BusinessLogicLayer\bin\Debug\net5.0\BusinessLogicLayer.deps.json
+D:\CSharp\Day14\BusinessLogicLayer\bin\Debug\net5.0\BusinessLogicLayer.dll
+D:\CSharp\Day14\BusinessLogicLayer\bin\Debug\net5.0\ref\BusinessLogicLayer.dll
+D:\CSharp\Day14\BusinessLogicLayer\bin\Debug\net5.0\BusinessLogicLayer.pdb
+D:\CSharp\Day14\BusinessLogicLayer\bin\Debug\net5.0\DataAccessLayer.dll
+D:\CSharp\Day14\BusinessLogicLayer\bin\Debug\net5.0\DataAccessLayer.pdb
+D:\CSharp\Day14\BusinessLogicLayer\bin\Debug\net5.0\DataAccessLayer.dll.config
+D:\CSharp\Day14\BusinessLogicLayer\obj\Debug\net5.0\BusinessLogicLayer.csprojAssemblyReference.cache
+D:\CSharp\Day14\BusinessLogicLayer\obj\Debug\net5.0\BusinessLogicLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\CSharp\Day14\BusinessLogicLayer\obj\Debug\net5.0\BusinessLogicLayer.AssemblyInfoInputs.cache
+D:\CSharp\Day14\BusinessLogicLayer\obj\Debug\net5.0\BusinessLogicLayer.AssemblyInfo.cs
+D:\CSharp\Day14\BusinessLogicLayer\obj\Debug\net5.0\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+D:\CSharp\Day14\BusinessLogicLayer\obj\Debug\net5.0\BusinessLogicLayer.csproj.CopyComplete
+D:\CSharp\Day14\BusinessLogicLayer\obj\Debug\net5.0\BusinessLogicLayer.dll
+D:\CSharp\Day14\BusinessLogicLayer\obj\Debug\net5.0\ref\BusinessLogicLayer.dll
+D:\CSharp\Day14\BusinessLogicLayer\obj\Debug\net5.0\BusinessLogicLayer.pdb
